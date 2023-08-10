@@ -32,9 +32,16 @@ def add_time(start_time, duration, day=None):
          
     original_total = final_Twelve_HCS
     
-    if final_Twelve_HCS >= 12:
+    if final_Twelve_HCS > 12:
         final_Twelve_HCS = final_Twelve_HCS % 12
         
+        if start_time_script == 'AM':
+            final_time_script = 'PM'
+        else:
+            final_time_script = 'AM'
+            
+    elif   final_Twelve_HCS == 12:  
+        final_Twelve_HCS = 12
         if start_time_script == 'AM':
             final_time_script = 'PM'
         else:
@@ -82,9 +89,6 @@ def add_time(start_time, duration, day=None):
                 print(f'{final_Twelve_HCS}:{end_minutes:02} {final_time_script}')
 
 # Example usage
-add_time("3:00 PM", "3:10")
-add_time("11:30 AM", "2:32", "monday")
-add_time("11:43 AM", "00:20")
-add_time("10:10 PM", "3:30")
-add_time("11:43 PM", "24:20", "tuesday")
-add_time("6:30 PM", "205:12")
+add_time("8:16 PM", "466:02", "tuesday")
+add_time("2:59 AM", "24:00", "saturDay")
+add_time("2:59 AM", "24:00")
