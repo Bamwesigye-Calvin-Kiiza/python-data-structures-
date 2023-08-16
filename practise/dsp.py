@@ -1,10 +1,12 @@
 # binary search review 
 def main():
-    un_ordered_list =  [0,3,5,6,7,9,10,15,22,30,81,101] 
-    number = get_number()
+    un_ordered_list =  [0,3,5,22,30,81,101,5,6,7,9,10,1] 
+    # number = get_number()
     
     # print(binarysearch(un_ordered_list,number))
     # print(recursivebinarysearch(un_ordered_list,number,len(un_ordered_list),0))
+    # print(bubblesort(un_ordered_list))
+    print(insertionsort(un_ordered_list))
     
 # function for getting number to search for 
 def get_number():
@@ -48,7 +50,47 @@ def recursivebinarysearch(array,number,right_index,left_index):
     else:
         left_index = middle_index+1
     return recursivebinarysearch(array,number,right_index,left_index)
-    
+
+def bubblesort(array):
+    for x in range(len(array)-1):
+        shuffle = False
+        
+        for i in range(len(array)-1):
+            if array[i] > array[i+1]:
+                tmp = array[i]
+                array[i]= array[i+1]
+                array[i+1] = tmp
+                shuffle = True
+                
+        if shuffle == False:
+            break
+
+    return array     
+
+def insertionsort(array):
+    for i in range(1,len(array)):
+       pivot = array[i]
+       sorted_array_index = i -1 
+       
+       while sorted_array_index >=0 and pivot < array[sorted_array_index]:
+            array[sorted_array_index + 1] = array[sorted_array_index]
+            sorted_array_index -= 1
+            
+       array_len = i
+       
+       
+       if array_len % 2 == 0:
+        #    print(int((array_len/2)))
+           median =   (array[int((array_len/2))]+array[int((array_len/2))+1])/2
+           print(median)
+                
+           
+       else:
+           median =array[int((array_len/2).__round__(0))]
+        #    print(int((array_len/2)))
+           print(median)
+           
+    return array
     
 if __name__ == '__main__':
     main()
