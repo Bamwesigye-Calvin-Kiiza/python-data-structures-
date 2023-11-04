@@ -1,6 +1,6 @@
 # binary search review 
 def main():
-    un_ordered_list =  [0,3,5,22,30,81,101,5,6,7,9,10,1] 
+    un_ordered_list =  [2,1,5,7,2,0,5] 
     # number = get_number()
     
     # print(binarysearch(un_ordered_list,number))
@@ -69,27 +69,17 @@ def bubblesort(array):
 
 def insertionsort(array):
     for i in range(1,len(array)):
-       pivot = array[i]
-       sorted_array_index = i -1 
-       
-       while sorted_array_index >=0 and pivot < array[sorted_array_index]:
+        pivot = array[i]
+        sorted_array_index = i -1 
+        
+        while sorted_array_index >=0 and pivot < array[sorted_array_index]:
             array[sorted_array_index + 1] = array[sorted_array_index]
             sorted_array_index -= 1
-            
-       array_len = i
+        array[sorted_array_index+1] = pivot 
+        
+    
+        
        
-       
-       if array_len % 2 == 0:
-        #    print(int((array_len/2)))
-           median =   (array[int((array_len/2))]+array[int((array_len/2))+1])/2
-           print(median)
-                
-           
-       else:
-           median =array[int((array_len/2).__round__(0))]
-        #    print(int((array_len/2)))
-           print(median)
-           
     return array
     
 if __name__ == '__main__':
