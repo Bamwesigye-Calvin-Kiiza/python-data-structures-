@@ -20,12 +20,19 @@ class Stack:
     def size(self):
         return len(self.container)
     
-    def reversed(self):
-        return self.container.reverse()
+    
     
 if __name__ == "__main__":
-    stack = Stack()
-    stack.push('hajbdd')
-    stack.reversed
-    print(stack.reversed())
-
+    def reverse(data):
+        stack = Stack()
+        for later in data:
+            stack.push(later)
+        
+        strr = ''
+        
+        while stack.size()!=0:
+            strr += stack.pop()
+         
+        return strr    
+     
+    print(reverse('stack'))
