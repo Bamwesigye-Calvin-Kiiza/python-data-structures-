@@ -1,5 +1,5 @@
 from collections import deque
-from bokeh.transform import stack
+# from bokeh.transform import stack
 
 class Stack:
     def __init__(self):
@@ -35,4 +35,4 @@ if __name__ == "__main__":
          
         return strr    
      
-    print(reverse('stack'))
+    print(reverse('Calvin'))
